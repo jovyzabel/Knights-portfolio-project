@@ -26,6 +26,7 @@ nav a {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
     /* display: flex;
     justify-content: end; */
 }
@@ -35,6 +36,7 @@ nav a {
     background-color: rgb(7, 7, 165);
     color: rgb(9, 209, 9);
     height: 50vh;
+    
 }
 
 header {
@@ -52,7 +54,7 @@ header {
 
 .project-group {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 }
 
@@ -61,8 +63,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
+    animation: appear 2s 1;
+    transition: 200ms ease-in-out;
+    
 }
 
 #profile-link {
@@ -73,6 +76,7 @@ header {
 .project-tile {
     background-color: rgb(236, 234, 234);
     border-radius: 10px;
+    
 
 }
 
@@ -114,5 +118,15 @@ footer ul {
 @media print {
     nav {
         display: none;
+    }
+}
+
+@keyframes appear {
+    from{
+        transform: translateX(-400px);
+        
+    }
+    to{
+        top: 0;
     }
 }
